@@ -12,7 +12,7 @@ const TodoList = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/todos")
+      const response = await axios.get("https://backend-ser-ga4m.vercel.app/api/todos")
       setTodos(response.data)
     } catch (error) {
       console.error("Failed to fetch todos:", error)
@@ -30,7 +30,7 @@ const TodoList = () => {
     if (!window.confirm("Are you sure you want to delete this todo?")) return
 
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`)
+      await axios.delete(`https://backend-ser-ga4m.vercel.app/api/todos/${id}`)
       setTodos(todos.filter((todo) => todo._id !== id))
       alert("Todo deleted successfully!")
     } catch (error) {
@@ -55,7 +55,7 @@ const TodoList = () => {
     if (newImage) formData.append("image", newImage)
 
     try {
-      const response = await axios.put(`http://localhost:5000/api/todos/${editTodo._id}`, formData, {
+      const response = await axios.put(`https://backend-ser-ga4m.vercel.app/api/todos/${editTodo._id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       })
 
