@@ -5,9 +5,10 @@ import Register from "./components/auth/Register"
 import ResetPassword from "./components/auth/ResetPassword"
 import Dashboard from "./components/Dashboard"
 import Navbar from "./components/Navbar"
-import { AuthProvider, useAuth } from "./context/authContext"
+// import { AuthProvider, useAuth } from "./context/authContext"
 import "./App.css"
 import ForgotPassword from "./components/auth/ForgetPassword"
+import { AuthProvider, useAuth } from "./context/authContext"
 
 function AppContent() {
   const { user, loading } = useAuth()
