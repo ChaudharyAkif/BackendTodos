@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem("token")
       if (token) {
         try {
-          const response = await axios.get("https://your-vercel-backend.vercel.app/auth/verify-token")
+          const response = await axios.get("https://backend-ser-ga4m.vercel.app//auth/verify-token")
           setUser(response.data.user)
         } catch (error) {
           localStorage.removeItem("token")
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post("https://your-vercel-backend.vercel.app/auth/login", {
+      const response = await axios.post("https://backend-ser-ga4m.vercel.app//auth/login", {
         email,
         password,
       })
@@ -83,7 +83,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await axios.post("https://your-vercel-backend.vercel.app/auth/register", userData)
+      const response = await axios.post("https://backend-ser-ga4m.vercel.app//auth/register", userData)
       return { success: true, message: response.data.message }
     } catch (error) {
       return {
